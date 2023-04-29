@@ -39,7 +39,7 @@ tab1:AddTextbox({
 	end	  
 })
 
-tab1:AddButton({
+tab1:AddButton{
 	Name = "Check Key!",
 	Callback = function()
             if _G.KeyInput == _G.Key then                
@@ -47,7 +47,7 @@ tab1:AddButton({
                 CorrectKey()
             end
   	end    
-})
+}
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Sax Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
