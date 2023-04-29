@@ -6,12 +6,12 @@ _G.Key = "Test"
 _G.KeyInput = "string"
 
 function CorrectKey()
-OrionLib:MakeNotification({
+OrionLib:MakeNotification{
 	Name = "Key!",
 	Content = "You have entered the correct key!",
 	Image = "",
 	Time = 4
-})
+}
 end
 
 
@@ -19,27 +19,27 @@ end
 local Window = OrionLib:MakeWindow({Name = "Key System Tutorial", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroEnabled = false})
 
 -- Tabs
-local tab1 = Window:MakeTab({
+local tab1 = Window:MakeTab{
 	Name = "Key System",
 	Icon = "",
 	PremiumOnly = false
-})
+}
 
 -- Define tab1
-local section1 = tab1:AddSection({
+local section1 = tab1:AddSection{
 	Name = "Key"
-})
+}
 
-tab1:AddTextbox({
+tab1:AddTextbox{[
 	Name = "Enter Key",
 	Default = "",
 	TextDisappear = false,
 	Callback = function(Value)
 		_G.KeyInput = Value
 	end	  
-})
+}]
 
-tab1:AddButton{
+tab1:AddButton{[
 	Name = "Check Key!",
 	Callback = function()
             if _G.KeyInput == _G.Key then                
@@ -47,9 +47,9 @@ tab1:AddButton{
                 CorrectKey()
             end
   	end    
-}
+}]
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Sax Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow[{Name = "Sax Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"}]
 
 --[[
 Name =  - The name of the UI.
@@ -62,30 +62,30 @@ IntroIcon =  - URL to the image you want to use in the intro animation.
 Icon =  - URL to the image you want displayed on the window.
 CloseCallback =  - Function to execute when the window is closed.
 ]]
-local Tab = Window:MakeTab({
+local Tab = Window:MakeTab[{
 	Name = "Tab 1",
 	Icon = "rbxxasetid://12286321182",
 	PremiumOnly = false
-})
+}]
 
 --[[
 Name =  - The name of the tab.
 Icon =  - The icon of the tab.
 PremiumOnly =  - Makes the tab accessible to Sirus Premium users only.
 ]]
-local Section = Tab:AddSection({
+local Section = Tab:AddSection[{
 	Name = "Section"
-})
+}]
 
 --[[
 Name =  - The name of the section.
 ]]
-OrionLib:MakeNotification({
+OrionLib:MakeNotification[{
 	Name = "Sax Hub",
 	Content = "A Script Made By TranthanhthaiZ",
 	Image = "rbxassetid://4483345998",
 	Time = 5
-})
+}]
 
 --[[
 Title =  - The title of the notification.
@@ -93,26 +93,26 @@ Content =  - The content of the notification.
 Image =  - The icon of the notification.
 Time =  - The duration of the notfication.
 ]]
-Tab:AddButton({
+Tab:AddButton[{
 	Name = "Inf yield",
 	Callback = function()
       		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
   	end    
-})
+}]
 
 --[[
 Name =  - The name of the button.
 Callback =  - The function of the button.
 ]]
 
-Tab:AddToggle({
+Tab:AddToggle[{
 	Name = "IceHub",
 	Default = false,
 	Callback = function(Value)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/AvatarUnlocker/main/IceHub"))()
 end)    
 
-})
+}]
 
 --[[
 Name =  - The name of the toggle.
@@ -120,13 +120,13 @@ Default =  - The default value of the toggle.
 Callback =  - The function of the toggle.
 ]]
 CoolToggle:Set(true)
-Tab:AddColorpicker({
+Tab:AddColorpicker[{
 	Name = "Colorpicker",
 	Default = Color3.fromRGB(255, 0, 0),
 	Callback = function(Value)
 		print(Value)
 	end	  
-})
+}]
 
 --[[
 Name =  - The name of the colorpicker.
@@ -134,7 +134,7 @@ Default =  - The default value of the colorpicker.
 Callback =  - The function of the colorpicker.
 ]]
 ColorPicker:Set(Color3.fromRGB(255,255,255))
-Tab:AddSlider({
+Tab:AddSlider[{
 	Name = "Speed",
 	Min = 0,
 	Max = 500,
@@ -145,7 +145,7 @@ Tab:AddSlider({
 	Callback = function(Value)
 		print(Value)
 	end    
-})
+}]
 
 --[[
 Name =  - The name of the slider.
@@ -160,14 +160,14 @@ Slider:Set(2)
 CoolLabel:Set("Label New!")
 Tab:AddParagraph("Paragraph1","Type Here..")
 CoolParagraph:Set("Paragraph New!", "New Paragraph Content!")
-Tab:AddTextbox({
+Tab:AddTextbox[{
 	Name = "Executors",
 	Default = "10",
 	TextDisappear = true,
 	Callback = function(Value)
 		print(Value)
 	end	  
-})
+}]
 
 --[[
 Name =  - The name of the textbox.
@@ -175,7 +175,7 @@ Default =  - The default value of the textbox.
 TextDisappear =  - Makes the text disappear in the textbox after losing focus.
 Callback =  - The function of the textbox.
 ]]
-Tab:AddBind({
+Tab:AddBind[{
 	Name = "Keybind",
 	Default = Enum.KeyCode.E,
 	Hold = false,
@@ -183,7 +183,7 @@ Tab:AddBind({
 		print("loadstring(game:HttpGet('https://raw.githubusercontent
 com/TranthanhthaiZScripts/MyScripts/DoughV2Loader.lua'))();")
 	end    
-})
+}]
 
 --[[
 Name =  - The name of the bind.
@@ -192,14 +192,14 @@ Hold =  - Makes the bind work like: Holding the key > The bind returns true, Not
 Callback =  - The function of the bind.
 ]]
 Bind:Set(Enum.KeyCode.E)
-Tab:AddDropdown({
+Tab:AddDropdown[{
 	Name = "Dropdown",
 	Default = "1",
 	Options = {"1", "2"},
 	Callback = function(Value)
 		print(Value)
 	end    
-})
+}]
 
 --[[
 Name =  - The name of the dropdown.
@@ -210,12 +210,12 @@ Callback =  - The function of the dropdown.
 Dropdown:Refresh(List,true)
 Dropdown:Set("dropdown option")
 OrionLib:Init()
-Tab1:AddToggle({
+Tab1:AddToggle[{
     Name = "Toggle",
     Default = true,
     Save = true,
     Flag = "toggle"
-})
+}]
 
 print(OrionLib.Flags["toggle"].Value) -- prints the value of the toggle.
 OrionLib:Destroy()
